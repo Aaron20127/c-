@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "cmath": "cpp",
+        "climits": "cpp",
+        "cfloat": "cpp",
+        "array": "cpp",
+        "istream": "cpp"
+    }
+}
