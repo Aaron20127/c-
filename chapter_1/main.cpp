@@ -9,7 +9,7 @@ int climits_test(void);
 int cPlusPlus_init(void);
 int flaotnum(void);
 
-//同步测试
+//已经成功了
 
 int main()
 {
