@@ -9,6 +9,8 @@ int climits_test(void);
 int cPlusPlus_init(void);
 int flaotnum(void);
 
+//同步测试
+
 int main()
 {
 	cout.setf(ios_base::fixed, ios_base::floatfield);
