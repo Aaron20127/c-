@@ -38,17 +38,20 @@
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
-                "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5",
-                "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux",
-                "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward",
-                "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include",
-                "/usr/local/include",
-                "/usr/include",
-                "${workspaceRoot}"
+                    "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5",
+                    "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux",
+                    "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward",
+                    "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include",
+                    "/usr/local/include",
+                    "/usr/include",
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
-            }
+            },
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++14"
         },
         {
             "name": "Win32",
