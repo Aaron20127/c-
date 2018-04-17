@@ -6,6 +6,8 @@
         "climits": "cpp",
         "cfloat": "cpp",
         "array": "cpp",
-        "istream": "cpp"
-    }
+        "istream": "cpp",
+        "typeinfo": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
