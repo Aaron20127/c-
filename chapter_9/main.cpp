@@ -11,16 +11,22 @@
 #include <typeinfo>
 
 using namespace std;
+
 int globle = 1;
+extern const int finger;
+
+template <typename T>
+void show(T x);
 
 void globle_test(void);
 void mutable_test(void);
+void const_extern_test(void);
 
 
 int main(int agrs, char *argv[])
 {
 	//globle_test();
-
+	const_extern_test();
 
 	cin.get();
 	cin.get();
@@ -52,4 +58,10 @@ void mutable_test(void)
 	const go g = {1, 1};
 	// g.a = 1; //不允许
 	g.b = 2; //允许改变
+}
+
+//调用const 生成的外部变量，必须在定义时添加extern
+void const_extern_test(void)
+{
+	show(finger);
 }

@@ -11,7 +11,8 @@
                 "-g",
                 "-std=c++11",
                 "-Wall",
-                "main.cpp"
+                "main.cpp",
+                "file.cpp"
             ],
             "group": {
                 "kind": "build",
