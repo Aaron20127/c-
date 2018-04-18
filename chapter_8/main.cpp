@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <array>
+#include <typeinfo>
 
 using namespace std;
 
@@ -22,14 +23,19 @@ int cite_test(void);
 int default_parameters_test(int a, int b, int c = 3, int d = 4); 
 void overload_test_1(void);
 void template_test(void);
+int decltype_test(void);
+int unknown_return_type(void);
+
 
 int main(int agrs, char *argv[])
 {
 	//inline_test();
 	//default_parameters_test(1, 2);
 	//overload_test_1();
-	template_test();	
-	
+	//template_test();	
+	//decltype_test();
+	unknown_return_type();
+
 	cin.get();
 	cin.get();
 	return 0;
@@ -102,19 +108,19 @@ void overload_test_1(void)
 template <typename T>
 static void show(T & a)
 {
-	cout << a << endl;
+	cout << a << endl << endl;
 }
 
 template <typename T>
 static void show2(T & a, T & b)
 {
-	cout << a << ", " << b << endl;
+	cout << a << ", " << b << endl << endl;
 }
 
 template <typename T>
 static void Swap(T & a, T & b)
 {
-	cout << "Swap(T & a, T & b)\n" << endl;
+	cout << "Swap(T & a, T & b)\n";
 	T temp = a;
 	a = b;
 	b = temp;
@@ -123,7 +129,7 @@ static void Swap(T & a, T & b)
 template <typename T>
 static void Swap(T & a, T & b, int n)
 {
-	cout << "Swap(T & a, T & b, int n)\n" << endl;
+	cout << "Swap(T & a, T & b, int n)\n";
 	T temp = a;
 	a = b;
 	b = temp;
@@ -134,7 +140,15 @@ template <>
 void Swap(float & a, float & b)
 // void Swap<float>(float & a, float & b)
 {
-	cout << "template <> Swap<float>(float & a, float & b)\n" << endl;	
+	cout << "template <> Swap<float>(float & a, float & b)\n";	
+	float temp = a;
+	a = b;
+	b = temp;
+}
+
+static void Swap(float & a, float & b)
+{
+	cout << "void Swap(float & a, float & b)\n";	
 	float temp = a;
 	a = b;
 	b = temp;
@@ -159,6 +173,36 @@ void template_test(void)
 	Swap(e, f); //显示具体化
 	show2(e, f);
 
+	Swap<>(e, f); //强制使用模板匹配
+	show2(e, f);
+
 	Swap<char>(g, h);
 	show2(g, h);
+}
+
+//decltype 提取类型
+int decltype_test(void)
+{
+	int x = 1;
+
+	decltype(x) y = 2;
+	decltype((x)) z = x; //得到x的引用
+
+	z = 3;
+	show(x);
+
+	return 0;
+}
+
+//后置返回类型，对未知类型进行返回，用到了类型截取decltype
+template <typename T1, typename T2>
+auto gt(T1 x, T2 y) -> decltype(x + y)
+{
+	return x + y;
+}
+
+int unknown_return_type(void)
+{
+	int a = 2, b = 2;
+	cout << gt(a, b) << endl;
 }
