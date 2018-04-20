@@ -10,6 +10,7 @@
 #include <array>
 #include <typeinfo>
 #include "header/debug.h"
+#include "header/file.h"
 
 using namespace std;
 
@@ -29,9 +30,9 @@ int main(int agrs, char *argv[])
 {
 	//globle_test();
 	//const_extern_test();
-	//namespace_test();
+	namespace_test();
 
-	debug_test();
+	//debug_test();
 	cin.get();
 	cin.get();
 	return 0;
@@ -81,6 +82,11 @@ namespace jill {
 	int a = 1;
 }
 
+//未命名相当于文件内部变量
+namespace {
+	int b = 1;
+}
+
 void namespace_test(void)
 {
 	using namespace jill;
@@ -88,6 +94,13 @@ void namespace_test(void)
 	int a = 2;
 	show(a);
 	show(jill::a);
+
+	show(b); //没有名称的域名相当于文件内的全局变量
+
+	namespace john = jill; //域名重命名
+	show(john::a);
+
+	pers::show_my_name(); //使用其他文件的域名
 }
 
 //打印测试
