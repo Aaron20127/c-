@@ -30,7 +30,7 @@ Stock::~Stock()
     cout << "~Stock(), " << _company << endl;
 }
 
-void Stock::show(void)
+void Stock::show(void) const
 {
     cout << "void Stock::Tshow(void)\n";
     cout << "_company: " << _company << '\n'

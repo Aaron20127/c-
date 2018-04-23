@@ -29,7 +29,7 @@ int main(int agrs, char *argv[])
 void class_test(void)
 {
 	{
-		Stock stock("lee", 1, 2);
+		const Stock stock("lee", 1, 2);
 		stock.show();
 		cout << endl;
 
@@ -47,13 +47,13 @@ void class_test(void)
 	}
 
 	{
-		Stock stock("lee", 1, 2);
+		Stock stock{"lee", 1, 2};
 		stock.show();
 		cout << endl;
 	}
 
 	{
-		Stock stock1 = Stock("Bluce", 3, 4);
+		Stock stock1 = {"Bluce", 3, 4};
 		stock1.show();
 		cout << endl;
 	}
