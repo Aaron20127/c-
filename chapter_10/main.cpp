@@ -15,10 +15,16 @@
 using namespace std;
 
 void class_test(void);
+void class_this_test(void);
+void class_operator_test(void);
+
 
 int main(int agrs, char *argv[])
 {
-	class_test();
+	//class_test();
+	// class_this_test();
+ 	class_operator_test();
+	
 
 	cin.get();
 	cin.get();
@@ -60,3 +66,19 @@ void class_test(void)
 
 }
 
+//this指针指向调用类自身的地址
+void class_this_test(void)
+{
+	Stock stock1("B1", 2,1);
+	Stock stock2("B2", 1,2);
+	stock1.topval(stock2).show();
+}
+
+//重载运算符测试
+void class_operator_test(void)
+{
+	Stock stock1("Lee",1,1);
+	Stock stock2("hh", 2, 2); 
+	stock1 = stock1 + stock2;
+	stock1.show();
+}

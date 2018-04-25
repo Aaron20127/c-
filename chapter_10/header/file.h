@@ -19,6 +19,8 @@ public:
     Stock(const std::string & co, long a1 = 1, double b1 = 0);
     ~Stock();
     void show(void) const; //当定义常量的类时，可以调用该方法
+    const Stock & topval(const Stock & s) const;
+    Stock operator+(const Stock & s) const; //重载加法
 };
 
 #endif

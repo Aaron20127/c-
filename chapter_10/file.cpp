@@ -37,3 +37,19 @@ void Stock::show(void) const
          << "_a: " << _a << '\n'
          << "_b: " << _b << endl;
 }
+
+const Stock & Stock::topval(const Stock & s) const
+{
+    if (s._a > _a)
+        return s;
+    else 
+        return *this;
+}
+
+Stock Stock::operator+(const Stock & s) const
+{
+    Stock stock(_company,0,0);
+    stock._a += s._a;
+    stock._b += s._b;
+    return stock;
+}
