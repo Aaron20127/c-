@@ -88,3 +88,22 @@ std::ostream & operator<<(std::ostream & os, const Stock & s)
          << "_b: " << s._b << endl << endl;
     return os;
 }
+
+Stock::operator int () const
+{
+    cout << "operator int () const\n";    
+    return 1;
+}
+    
+Stock::operator double () const
+{
+    cout << "operator double () const\n";    
+    return 2.0;
+}
+
+
+Stock::operator char () const
+{
+    cout << "operator char () const\n"; 
+    return 'h';
+}

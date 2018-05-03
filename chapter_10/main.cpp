@@ -18,13 +18,17 @@ void class_test(void);
 void class_this_test(void);
 void class_operator_test(void);
 void friend_test(void);
+void convert_function_test(void);
+
 
 int main(int agrs, char *argv[])
 {
-	class_test();
+	// class_test();
 	// class_this_test();
  	//class_operator_test();
 	//friend_test();
+	convert_function_test();
+	
 
 	cin.get();
 	cin.get();
@@ -132,4 +136,16 @@ void friend_test(void)
 	}
 }
 
+//转换函数，将类对象赋值给其他类型
+void convert_function_test(void)
+{
+	Stock stock1("Lee", 1, 1);
+	int a = stock1;
+	double b = stock1;
 
+	// long c = stock1; //有二意性，编译报错
+	long d = (int) stock1; //指定转换函数
+
+	// char e = stock1; //explicit声明，必须加显示使用显示转换
+	char e = (char)stock1;
+}
