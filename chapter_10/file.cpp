@@ -3,11 +3,7 @@
 
 using namespace std;
 
-template <typename T>
-void show(T x)
-{
-	cout << x;
-}
+
 
 Stock::Stock()
 {
@@ -17,9 +13,26 @@ Stock::Stock()
     _b = 0;
 }
 
-Stock::Stock(const string & co, long a1, double b1)
+Stock::Stock(double n)
 {
-    cout << "Stock::Stock(const string & co, long a1, double b1)\n";
+    cout << "Stock::Stock(double n)\n";
+    _company = "no name";
+    _a = 0;
+    _b = 0;
+}
+
+//只能显示转换
+Stock::Stock(int n)
+{
+    cout << "Stock::Stock(int n)\n";
+    _company = "no name";
+    _a = 0;
+    _b = 0;
+}
+
+Stock::Stock(const string & co, double a1, double b1)
+{
+    cout << "Stock::Stock(const string & co, double a1, double b1)\n";
     _company = co;
     _a = a1;
     _b = b1;
@@ -34,8 +47,9 @@ void Stock::show(void) const
 {
     cout << "void Stock::Tshow(void)\n";
     cout << "_company: " << _company << '\n'
-         << "_a: " << _a << '\n'
-         << "_b: " << _b << endl;
+         << "_a: " << _a << endl
+         << "_b: " << _b << endl << endl;
+   
 }
 
 const Stock & Stock::topval(const Stock & s) const
@@ -52,4 +66,25 @@ Stock Stock::operator+(const Stock & s) const
     stock._a += s._a;
     stock._b += s._b;
     return stock;
+}
+
+Stock Stock::operator*(double m) const
+{
+    cout << "Stock::operator*(double m) const\n";
+    return Stock(_company, this->_a * m, this->_b * m);
+}
+
+Stock operator*(double m, const Stock & n)
+{
+    cout << "operator*(double m, const Stock & n)\n";
+    return n*m;
+}
+
+std::ostream & operator<<(std::ostream & os, const Stock & s)
+{
+    cout << "Stock & operator<<(std::ostream & os, const Stock & s)\n";
+    cout << "_company: " << s._company << '\n'
+         << "_a: " << s._a << endl
+         << "_b: " << s._b << endl << endl;
+    return os;
 }
