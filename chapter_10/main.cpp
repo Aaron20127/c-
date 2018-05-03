@@ -25,9 +25,9 @@ int main(int agrs, char *argv[])
 {
 	// class_test();
 	// class_this_test();
- 	//class_operator_test();
+ 	class_operator_test();
 	//friend_test();
-	convert_function_test();
+	// convert_function_test();
 	
 
 	cin.get();
@@ -116,6 +116,13 @@ void class_operator_test(void)
 	{
 		Stock stock1("Lee",1,1);
 		cout << "stock1:\n" << stock1;
+	}
+
+	// 由于存在转换函数这里将出现歧义，是先将stock1调用转换函数变成double类型，还是先将1.0转换成Stock对象调用重载函数
+	mycout();
+	{
+		Stock stock1("Lee",1,1);
+		// stock1 = stock1 + 1.0; 
 	}
 }
 
