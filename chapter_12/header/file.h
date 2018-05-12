@@ -17,6 +17,9 @@ private:
     int len;
     static int num_strings;
 
+    int myyear;
+    const int values;
+
 public:
     StringMe(const char *s);
     StringMe(const StringMe & st);

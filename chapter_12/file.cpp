@@ -7,7 +7,7 @@ using namespace std;
 
 int StringMe::num_strings = 0;
 
-StringMe::StringMe(const char *s)
+StringMe::StringMe(const char *s) : myyear(0),values(0)
 {
     show("StringMe::StringMe(const char *s)\n");
     len = std::strlen(s);
@@ -16,7 +16,7 @@ StringMe::StringMe(const char *s)
     num_strings ++;
 }
 
-StringMe::StringMe(const StringMe & st)
+StringMe::StringMe(const StringMe & st):values(0)
 {
     show("StringMe::StringMe(const StringMe &)\n");
     num_strings++;
@@ -25,7 +25,7 @@ StringMe::StringMe(const StringMe & st)
     std::strcpy(str, st.str);
 }
 
-StringMe::StringMe()
+StringMe::StringMe():values(0)
 {
     show("StringMe::StringMe()\n");
     len = 5;
