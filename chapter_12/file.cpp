@@ -70,4 +70,34 @@ StringMe & StringMe::operator=(const StringMe & st)
 
     return *this;
 }
- 
+
+StringMe & StringMe::operator=(const char * s)
+{
+    show("StringMe & StringMe::operator=(const char * s)\n");         
+    delete [] str;
+    len = std::strlen(s);
+    str = new char[len+1];
+    std::strcpy(str, s);
+    return *this;
+}
+
+/* StringMe * StringMe::operator=(const char * s)
+{
+    show("StringMe * StringMe::operator=(const char * s)\n");
+    len = std::strlen(s);
+    str = new char[len+1];
+    std::strcpy(str, s);
+    return this;
+} */
+
+ char & StringMe::operator[](int i)
+ {
+    show("char & StringMe::operator[](int i)\n");     
+    return str[i];
+ }
+
+const char & StringMe::operator[](int i) const
+ {
+    show("const char & StringMe::operator[](int i) const\n");     
+    return str[i];
+ }

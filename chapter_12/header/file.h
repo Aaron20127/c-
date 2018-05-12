@@ -23,13 +23,19 @@ public:
     StringMe();
     ~StringMe();
 
+    char & operator[](int i);
+    const char & operator[](int i) const;    
+
     friend std::ostream & operator<<(std::ostream & os, const
                                      StringMe & st);
 
     StringMe & operator=(const StringMe & st);
-    
+    StringMe & operator=(const char * s);
+    // StringMe * operator=(const char * s);    
+
     void print(void);
-                                        
+
+    static int HowManyString() { return num_strings; }                             
 };
 
 #endif
