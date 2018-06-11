@@ -34,11 +34,22 @@ public:
 
     StringMe & operator=(const StringMe & st);
     StringMe & operator=(const char * s);
-    // StringMe * operator=(const char * s);    
 
     void print(void);
 
     static int HowManyString() { return num_strings; }                             
+};
+
+// 
+class reStringMe : public StringMe 
+{
+private:
+    int rating;
+
+public:
+    reStringMe (const char * str, int r = 0);
+    reStringMe (int r, const StringMe & s);
+    ~reStringMe();
 };
 
 #endif
