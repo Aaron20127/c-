@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "header/file.h"
+#include "header/common.h"
 
 using namespace std;
 

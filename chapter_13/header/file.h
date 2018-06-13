@@ -4,12 +4,6 @@
 #include <iostream>
 #include <string>
 
-template <typename T>
-void show(T x)
-{
-	std::cout << x;
-}
-
 class StringMe 
 {
 private:

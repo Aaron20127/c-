@@ -11,9 +11,10 @@
                 "-g",
                 "-std=c++11",
                 "-Wall",
-                "main.cpp",
-                "file.cpp",
-                "debug.cpp"
+                "*.cpp"
+                // "main.cpp",
+                // "file.cpp",
+                // "debug.cpp"
             ],
             "group": {
                 "kind": "build",
