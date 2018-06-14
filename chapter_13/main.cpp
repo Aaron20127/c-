@@ -73,4 +73,12 @@ void virtual_test(void)
 		BrassPlus p2("p2");
 		p2.Viewacct();
 	}
+
+	{
+	//如果基类Brass的析构函数不是虚的，则时方时不会调用BrassPlus的析构函数
+	//Brass的析构函数应使用 virtual ~Brass();
+		mycout();
+		Brass * p = new BrassPlus;
+		delete p;
+	}
 }

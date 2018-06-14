@@ -18,7 +18,9 @@ public:
     double Balance() const;
     virtual void Viewacct() const; // 虚函数，使派生类和基类能使用同名函数，具有各自的方法
     // void Viewacct() const;
-    virtual ~Brass() {}; // 虚析构函数，保护派生类释放时，基类正常释放
+    // virtual ~Brass(); // 虚析构函数，保正派生类释放时，基类正常释放
+    ~Brass(); // 虚析构函数，保正派生类释放时，基类正常释放
+
 };
 
 class BrassPlus : public Brass {
@@ -32,6 +34,7 @@ public:
               double ml = 500, double a = 0.11125);
     BrassPlus(const Brass & ba,
               double ml = 500, double r = 0.11125);
+    ~BrassPlus();
     virtual void Viewacct() const; // 虚函数，使派生类和基类能使用同名函数，具有各自的方法
     // void Viewacct() const;
     virtual void Withdraw(double amt); 

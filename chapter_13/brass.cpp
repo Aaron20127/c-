@@ -31,6 +31,12 @@ void Brass::Viewacct() const
     show("Brass::Viewacct() const\n");
 }
 
+Brass::~Brass()
+{
+    show("void Brass::~Brass()\n");
+}
+
+
 
 // BrassPlus-----------------------------------
 
@@ -55,4 +61,9 @@ void BrassPlus::Viewacct() const
 void BrassPlus::Withdraw(double amt)
 {
     show("BrassPluss::Withdraw(double amt)\n");
+}
+
+BrassPlus::~BrassPlus()
+{
+    show("void BrassPlus::~BrassPlus()\n");
 }
