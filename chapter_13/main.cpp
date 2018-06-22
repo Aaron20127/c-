@@ -75,10 +75,27 @@ void virtual_test(void)
 	}
 
 	{
-	//如果基类Brass的析构函数不是虚的，则时方时不会调用BrassPlus的析构函数
+	//如果基类Brass的析构函数不是虚的，则释放时不会调用BrassPlus的析构函数
 	//Brass的析构函数应使用 virtual ~Brass();
 		mycout();
 		Brass * p = new BrassPlus;
 		delete p;
 	}
+
+	{
+	// 参数不同的同函数将被派生类隐藏, 不管函数是不是虚的，
+	// 派生类无法直接使用同名的函数，只有向上转换成基类引用时才可使用基类同名函数
+		mycout();
+		BrassPlus p("p");
+		Brass & p1 = p;
+		p.virtualSameNameHidden();
+		// p.virtualSameNameHidden(1); //虚函数时，使用基类的同名函数时，派生类将报错
+		p1.virtualSameNameHidden(1);
+
+		p.sameNameHidden();
+		// p.sameNameHidden(1); //使用基类的同名函数时，派生类将报错
+		p1.sameNameHidden(1);	
+	}
 }
+
+

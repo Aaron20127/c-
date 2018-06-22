@@ -21,6 +21,8 @@ public:
     // virtual ~Brass(); // 虚析构函数，保正派生类释放时，基类正常释放
     ~Brass(); // 虚析构函数，保正派生类释放时，基类正常释放
 
+    virtual void virtualSameNameHidden(int n); 
+    void sameNameHidden(int n); 
 };
 
 class BrassPlus : public Brass {
@@ -41,6 +43,10 @@ public:
     void ResetMax(double m) { maxloan = m; };
     void ResetRate(double r) { rate = r; };
     void ReseOwes() { owesBank = 0; }
+
+    virtual void virtualSameNameHidden(); 
+    void sameNameHidden(); 
+
 };
 
 

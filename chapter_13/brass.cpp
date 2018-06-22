@@ -36,6 +36,15 @@ Brass::~Brass()
     show("void Brass::~Brass()\n");
 }
 
+void Brass::virtualSameNameHidden(int n)
+{
+    show("void Brass::virtualSameNameHidden(int n)\n");
+}
+
+void Brass::sameNameHidden(int n)
+{
+    show("void Brass::sameNameHidden(int n)\n");
+}
 
 
 // BrassPlus-----------------------------------
@@ -66,4 +75,14 @@ void BrassPlus::Withdraw(double amt)
 BrassPlus::~BrassPlus()
 {
     show("void BrassPlus::~BrassPlus()\n");
+}
+
+void BrassPlus::virtualSameNameHidden()
+{
+    show("void BrassPlus::virtualSameNameHidden()\n");
+}
+
+void BrassPlus::sameNameHidden()
+{
+    show("void BrassPlus::sameNameHidden()\n");
 }
